@@ -19,9 +19,6 @@ namespace Breakout
         GameContent gameContent;
 
         private Paddle paddle;
-        //  private Wall wall;
-        //  private Bricks bricks;
-        private Spelram spelRam;
         private int screenWidth = 0;
         private int screenHeight = 0;
         public Game1()
@@ -47,9 +44,7 @@ namespace Breakout
             
             int paddleY = screenHeight - 100; 
             paddle = new Paddle(paddleX, paddleY, screenWidth, spriteBatch, gameContent);
-            // bricks = new Bricks(bricksX, bricksY, screenWidth, spriteBatch, gameContent);
-            // wall = new Wall(1, 50, spriteBatch, gameContent);
-           // spelRam = new Spelram(screenWidth, screenHeight, spriteBatch, gameContent);
+            
             // TODO: Add your initialization logic here
             gameContent = new GameContent(Content);
     }
@@ -73,7 +68,7 @@ namespace Breakout
             
             int paddleY = screenHeight - 100;  
             paddle = new Paddle(paddleX, paddleY, screenWidth, spriteBatch, gameContent); 
-                                                                                           //   wall = new Wall(1, 50, spriteBatch, gameContent);
+                                                                                          
            
         }
 
@@ -100,11 +95,11 @@ namespace Breakout
             KeyboardState newKeyboardState = Keyboard.GetState();
             if (newKeyboardState.IsKeyDown(Keys.Left))
             {
-                paddle.MoveLeft();
+                paddle.Vänster();
             }
             if (newKeyboardState.IsKeyDown(Keys.Right))
             {
-                paddle.MoveRight();
+                paddle.Höger();
             }
             base.Update(gameTime);
         }
@@ -120,7 +115,7 @@ namespace Breakout
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             paddle.Draw();
-          //  wall.Draw();
+          
             spriteBatch.End();
             
             base.Draw(gameTime);
