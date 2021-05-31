@@ -12,13 +12,13 @@ namespace Breakout
 {
     class Paddle
     {
-        public float X { get; set; } 
+        public float X { get; set; }
         public float Y { get; set; }
-        public float Width { get; set; } 
-        public float Height { get; set; } 
+        public float Width { get; set; }
+        public float Height { get; set; }
         public float ScreenWidth { get; set; }
-        private Texture2D imgPaddle { get; set; } 
-        private SpriteBatch spriteBatch;  
+        private Texture2D imgPaddle { get; set; }
+        private SpriteBatch spriteBatch;
         public Paddle(float x, float y, float screenWidth, SpriteBatch spriteBatch, GameContent gameContent)
         {
             X = x;
@@ -33,34 +33,13 @@ namespace Breakout
         {
             spriteBatch.Draw(imgPaddle, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0);
         }
-        public void MoveLeft()
+        public void Vänster()
         {
             X = X - 7;
         }
-        public void MoveRight()
+        public void Höger()
         {
             X = X + 7;
-        }
-        public void MoveTo(float x)
-        {
-            if (x >= 0)
-            {
-                if (x < ScreenWidth - Width)
-                {
-                    X = x;
-                }
-                else
-                {
-                    X = ScreenWidth - Width;
-                }
-            }
-            else
-            {
-                if (x < 0)
-                {
-                    X = 0;
-                }
-            }
         }
     }
 }
