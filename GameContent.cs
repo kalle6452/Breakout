@@ -12,7 +12,7 @@ namespace Breakout
 {
     class GameContent
     {
-    //Använder get och set metoder för att man kan ändra variablers värde utan att påverka hur man kommer åt datan.
+    //Använder get och set metoder för att man kan ändra variablers värde utan att påverka hur man kommer åt datan, gör även att man kan komma åt datan externt.
         public Texture2D imgPaddle { get; set; }
         public Texture2D imgBall { get; set; }
         public Texture2D imgBrick { get; set; }
