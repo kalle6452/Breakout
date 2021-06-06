@@ -19,6 +19,9 @@ namespace Breakout
         GameContent gameContent;
 
         private Paddle paddle;
+        private Ball ball;
+        private Spelram spelRam;
+        private Bricks brick;
         private int screenWidth = 0;
         private int screenHeight = 0;
         public Game1()
@@ -44,7 +47,9 @@ namespace Breakout
             
             int paddleY = screenHeight - 100; 
             paddle = new Paddle(paddleX, paddleY, screenWidth, spriteBatch, gameContent);
-            
+            spelRam = new Spelram(screenWidth, screenHeight, spriteBatch, gameContent);
+            ball = new Ball(screenWidth, screenHeight, spriteBatch, gameContent);
+        //    brick = new Bricks(1, 50, spriteBatch, gameContent);
             // TODO: Add your initialization logic here
             gameContent = new GameContent(Content);
     }
@@ -65,7 +70,7 @@ namespace Breakout
             graphics.ApplyChanges();
             //create game objects
             int paddleX = screenWidth / 2;
-            
+            spelRam = new Spelram(screenWidth, screenHeight, spriteBatch, gameContent);
             int paddleY = screenHeight - 100;  
             paddle = new Paddle(paddleX, paddleY, screenWidth, spriteBatch, gameContent); 
                                                                                           
@@ -115,7 +120,8 @@ namespace Breakout
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             paddle.Draw();
-          
+            spelRam.Draw();
+            ball.Draw();
             spriteBatch.End();
             
             base.Draw(gameTime);
