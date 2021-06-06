@@ -21,7 +21,6 @@ namespace Breakout
         private Paddle paddle;
         private Ball ball;
         private Spelram spelRam;
-        private Bricks brick;
         private int screenWidth = 0;
         private int screenHeight = 0;
         public Game1()
@@ -49,7 +48,6 @@ namespace Breakout
             paddle = new Paddle(paddleX, paddleY, screenWidth, spriteBatch, gameContent);
             spelRam = new Spelram(screenWidth, screenHeight, spriteBatch, gameContent);
             ball = new Ball(screenWidth, screenHeight, spriteBatch, gameContent);
-        //    brick = new Bricks(1, 50, spriteBatch, gameContent);
             // TODO: Add your initialization logic here
             gameContent = new GameContent(Content);
     }
