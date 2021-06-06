@@ -14,15 +14,16 @@ namespace Breakout
     {
     
         public Texture2D imgPaddle { get; set; }
-     
-
+        public Texture2D imgBall { get; set; }
+        public Texture2D imgBrick { get; set; }
+        public Texture2D imgPixel { get; set; }
         public GameContent(ContentManager Content)
         {
-            
-        
-            imgPaddle = Content.Load<Texture2D>("Paddle");
-          
 
+            imgBall = Content.Load<Texture2D>("Ball");
+            imgPaddle = Content.Load<Texture2D>("Paddle");
+            imgBrick = Content.Load<Texture2D>("Brick");
+            imgPixel = Content.Load<Texture2D>("pixel");
         }
     }
 }
