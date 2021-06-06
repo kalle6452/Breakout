@@ -28,6 +28,7 @@ namespace Breakout
 
         public void Draw()
         {
+           //Här ritars rektanglarna upp.
             spriteBatch.Draw(imgPixel, new Rectangle(1, 1, (int)Width - 1, 1), Color.White); 
             spriteBatch.Draw(imgPixel, new Rectangle(0, 0, 1, (int)Height - 1), Color.White);
             spriteBatch.Draw(imgPixel, new Rectangle((int)Width - 1, 0, 1, (int)Height - 1), Color.White);
@@ -35,5 +36,3 @@ namespace Breakout
     }
     }
     
-
-
